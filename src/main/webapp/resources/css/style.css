@@ -1,0 +1,147 @@
+body{
+    background-color: #000!important;
+}
+
+footer >h4{
+position: absolute;
+    width: 100%;
+    bottom: 5px;
+    font-size: 12px;
+    color: #929293;
+    text-align: center;
+}
+/*** FEUILLE STYLE FORMULAIRE INSCRIPTION ****/
+
+header >h1{
+    font-size: 51px;
+    color: #37e824;
+    font-family: Trajan Pro Regular;
+}
+header{
+    /*background-color: #061733;*/
+    margin: 0;
+    width: 100%;
+    height: 79px;
+    padding: 1px;
+}
+
+form .erreur {
+    color: #900;
+}
+
+.alert-success{
+    display: none;
+}
+.alert-danger{
+    display: none;
+}
+
+.erreur{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+
+label{
+    color:#fff;
+}
+
+form #user{
+ background-color: #061733;
+ width: 60%;
+ padding-top: 25px;
+ padding-bottom: 25px;
+}
+
+div .form{
+ background: linear-gradient(to bottom right, #000000 0%, #0066ff 100%);
+ padding-top: 20px;
+ padding-bottom: 20px;
+ border: 1px white solid;
+ border-radius: 15px;
+ margin-top: 15%;
+}
+
+/*** FEULLE STYLE ESPACE ***/
+
+.navbar-nav>li>a{
+    font-size: 18px;
+}
+
+.navbar-brand{
+
+    font-family: Trajan Pro Regular;
+
+
+}
+navbar-header{
+    color: #37e824;
+    font-size: 28px;
+}
+
+.success{
+    margin: 0 40 10px;
+    color: white;
+    font-size: 15px;
+    text-align: right;
+}
+
+body >h1{
+    color:#ffffff;
+}
+
+div .table{
+ background: linear-gradient(to bottom right, #000000 0%, #0066ff 100%);
+ padding-top: 20px;
+ padding-bottom: 20px;
+ border: 1px white solid;
+ border-radius: 15px;
+ margin-top: 15%;
+ color: #ffffff;
+}
+
+div .form-group{
+ color: white;
+}
+
+.bienvenue{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 193px;
+}
+
+/* Page d'affichage fiche film*/
+
+#titre >h1{
+    text-align: center;
+    border: 1px black solid;
+    background: linear-gradient(to bottom right, #ffffff, 0%, #444343 100%);
+    height: 105px;
+    color: white;
+    padding: 29px;
+    font-family: fantasy;
+}
+.libelle{
+    color: white;
+}
+
+.row{
+    margin-bottom: 10px;
+}
+
+div .libelle{
+    text-align: justify;
+    padding-top: 20px;
+    font-size: 15px;
+
+}
+
+
+div .libelleR {
+    text-align: right;
+    color: white;
+    font-size: 15px;
+    padding-top: 20px;
+
+}
