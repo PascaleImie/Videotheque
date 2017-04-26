@@ -46,10 +46,10 @@ public class DeleteController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "deleteFilm/{id_film}")
-    public String deleteFilm(@PathVariable(value="id_film") int id_film, ModelMap modelMap, HttpSession httpSession)throws UnsupportedEncodingException{
+    public String deleteFilm(@PathVariable(value="id_film") long id_film, ModelMap modelMap, HttpSession httpSession)throws UnsupportedEncodingException{
 
-        Film film = filmService.getById(id_film,true);
-        filmService.delete(id_film);
+        Film film=filmService.getById(id_film,true);
+        filmService.delete(film);
         return "redirect:/consultFilm";
     }
 

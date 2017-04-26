@@ -15,7 +15,7 @@ public interface FilmService {
 
     public Film getByTitle(String titre);
 
-    public void delete(long id_film);
+    public void delete(Film film);
 
     public List<Film> getAllFilm();
 

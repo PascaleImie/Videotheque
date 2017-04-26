@@ -37,30 +37,11 @@ public class FilmDAOImpl implements FilmDAO {
     }
 
 
-
-    public void delete(long id_film){
-        //Récupération session hibernate
+    public void delete(Film film){
         Session session = sessionFactory.getCurrentSession();
-        //création d'une requête hibernate HQL
-        Query query = session.createQuery("delete from film_acteur where film_id="+id_film);
-        query.executeUpdate();
-        query = session.createQuery("delete from film_genre where film_id="+id_film);
-        query.executeUpdate();
-        //Récupération des résultats
-        Film film = (Film) query.uniqueResult();
-        List<Acteur> acteurs = film.getActeurs();
-        List<Genre> genres = film.getGenres();
-
-        //Suppression film
-        session.delete(film);
-        //Suppression des acteurs associés
-         for(Acteur act : acteurs){
-            session.delete(act);
-        }
-        //Suppression des genres associés
-        for(Genre g : genres){
-            session.delete(g);
-        }
+        film.getActeurs().remove(film.getActeurs());
+        film.getGenres().remove(film.getGenres());
+        session.remove(film);
     }
 
     @Override

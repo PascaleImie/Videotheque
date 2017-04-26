@@ -11,7 +11,7 @@ public interface FilmDAO {
 
     public Film getById(long id, boolean lazy);
 
-    public void delete(long id_film);
+    public void delete(Film film);
 
     public Film getByTitle(String titre);
 
