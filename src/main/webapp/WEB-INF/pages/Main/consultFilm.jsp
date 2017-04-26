@@ -31,7 +31,7 @@
                     <th>Genres</th>
                     <th>Réalisateur</th>
                     <th>Fiche film</th>
-                    <th></th>
+                    <th><span class="glyphicon glyphicon-trash" style="color:red"></span></th>
                 </tr>
                 </thead>
                 <c:forEach var="Films" items="${Films}">
@@ -49,7 +49,7 @@
                     </td>
                     <td>${Films.realisateur.prenom} ${Films.realisateur.nom}</td>
                     <td><a href="consultOneFilm/${Films.id_film}"><i class="fa fa-film" aria-hidden="true" style="color:yellow"></i></a></td>
-                    <td><a href="deleteFilm/${Films.id_film}"><span class="glyphicon glyphicon-trash" style="color:black"></span></a></td>
+                    <td><a href="deleteFilm/${Films.id_film}"><span class="glyphicon glyphicon-trash" style="color:red"></span></a></td>
                 </tr>
                 </tbody>
                 </c:forEach>

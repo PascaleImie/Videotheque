@@ -36,10 +36,7 @@
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/Videotheque/filmRegister">Ajouter film</a></li>
-                    <li><a href="/Videotheque/consultFilm">Consulter film</a></li>
-                    <!--<c:if test="${User.role=='admin'}">
-                        <li><a href="#">Supprimer Film</a></li>
-                    </c:if>-->
+                    <li><a href="/Videotheque/consultFilm">Consulter/Supprimer</a></li>
                 </ul>
             </li>
         </ul>

@@ -16,7 +16,7 @@
 <c:if test="${!empty User}">
     <p class="success">Connecté: ${User.prenom}</p>
 </c:if>
-<button type="button" class="btn btn-link"><a href="/Videotheque/consultFilm">Revenir à la liste des films</a></button>
+<button type="button" class="btn btn-link btn-lg"><a href="/Videotheque/consultFilm">Revenir à la liste des films</a></button>
 <div class="container">
     <div class="row" >
         <div id="titre">
