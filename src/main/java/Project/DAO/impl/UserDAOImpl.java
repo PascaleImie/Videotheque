@@ -25,8 +25,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getById(long id, boolean lazy) {
         User user =  sessionFactory.getCurrentSession().get(User.class, id);
-        /*if (lazy)
-            Hibernate.initialize(user.getMessages());*/
+
         return user;
     }
 
@@ -69,6 +68,6 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public void changeMdp(User user){
-      sessionFactory.getCurrentSession().saveOrUpdate(user);
+        sessionFactory.getCurrentSession().saveOrUpdate(user);
     }
 }

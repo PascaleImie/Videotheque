@@ -6,10 +6,9 @@ $(document).ready(function(){
         if(newMdp.val() != mdpConf.val()){
              e.preventDefault();
              $('#alert').fadeIn("slow").html("Mot de passe non confirmé");
-
+             $('#alert').fadeOut("slow");
         }
     });
-
 });
 
 $(document).ready( function () {

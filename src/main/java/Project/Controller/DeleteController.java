@@ -53,7 +53,4 @@ public class DeleteController {
         return "redirect:/supprFilm";
     }
 
-
-
-
 }

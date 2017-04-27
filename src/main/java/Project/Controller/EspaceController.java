@@ -34,22 +34,6 @@ public class EspaceController {
 
         } catch (NullPointerException e) {
             return "Main/index";
-
-
         }
-
-        //if(httpSession != null) {
-        //Récupère id enregistré dans session
-        //   long id = (Long) httpSession.getAttribute("UserId");
-        //Récupère user
-        //   User user = userService.getById(id, false);
-        //Envoie l'objet user à la JSP
-        //    modelMap.addAttribute("User", user);
-
-
-        //}
-        // return "Main/espace";
-        //}
-
     }
 }

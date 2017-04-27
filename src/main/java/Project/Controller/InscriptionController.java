@@ -39,8 +39,6 @@ public class InscriptionController {
         //envoi un objet vide à la JSP inscription
         modelMap.addAttribute("UserInscription", new UserRegisterForm());
 
-
-
         try {
             //Récupère id enregistré dans session
             long id = (Long) httpSession.getAttribute("UserId");
@@ -57,8 +55,6 @@ public class InscriptionController {
     @RequestMapping( method = RequestMethod.POST , value = "/addUser")
     public String addUser(@Valid @ModelAttribute("UserInscription") UserRegisterForm userRegisterForm, BindingResult result, ModelMap modelMap,
                           HttpSession httpSession) {
-
-        System.out.println("user :"+userRegisterForm.getPrenom());
 
 
         // Vérification des erreurs
@@ -92,7 +88,7 @@ public class InscriptionController {
 
 
         //return "Main/inscription";
-       return "redirect:/espace";
+        return "redirect:/espace";
     }
 
     public static String encodeSHA512(String plainPassword) {
@@ -109,11 +105,9 @@ public class InscriptionController {
         for(int i=0 ; i<password_length;i++){
             int pass = random.nextInt(choice.length());
             password += (choice.charAt(pass));
-
         }
         return password;
     }
-
 
 }
 

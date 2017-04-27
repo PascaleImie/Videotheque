@@ -36,6 +36,7 @@ public class ConnexionController {
         modelMap.addAttribute("User", new User());
 
         return "Main/connexion";
+
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/connectUser")
@@ -49,20 +50,23 @@ public class ConnexionController {
             System.out.println(userConnexion.getEmail());
             System.out.println(userConnexion.getMdp());
             System.out.println(userConnectForm.getMdp());
-           //Si le mdp stocké en bdd est égal au mdp encodé saisi sur le fomulaire connexion
+            //Si le mdp stocké en bdd est égal au mdp encodé saisi sur le fomulaire connexion
             if ((userConnexion.getMdp()).equals(encodeSHA512(userConnectForm.getMdp()))) {
                 //je sauvegarde l'id dans la session
                 httpSession.setAttribute("UserId", userConnexion.getId());
-               //je redirige vers l'espace admin
+                //je redirige vers l'espace admin
                 return "redirect:/espace";
-            } else{
+            } else {
                 String messageErreur = "Mot de passe incorrect";
                 modelMap.addAttribute("Erreur", messageErreur);
                 return "Main/connexion";
             }
+        } else {
+            //System.out.println("Email ou mot de passe non valide");
+            String messageErreur ="Adresse Mail non reconnue.Etes-vous certain d'être inscrit ?";
+            modelMap.addAttribute("Erreur", messageErreur);
+            return "Main/connexion";
         }
-        System.out.println("Email ou mot de passe non valide");
-        return "Main/connexion";
     }
 
     public static String encodeSHA512(String plainPassword) {

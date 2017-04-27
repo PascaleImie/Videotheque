@@ -26,13 +26,7 @@ public class DeconnexionController {
     @RequestMapping(method = RequestMethod.GET, value = "/deconnexion")
     public String main(ModelMap modelMap, HttpSession httpSession, SessionStatus status) throws UnsupportedEncodingException {
 
-
-
-           httpSession.invalidate();
-
-
-
-
+        httpSession.invalidate();
 
         return "Main/index";
     }

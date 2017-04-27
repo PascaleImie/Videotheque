@@ -52,8 +52,8 @@ public class FilmRegisterController {
     public String filmRegister (ModelMap modelMap, HttpSession httpSession ) {
 
         //envoi de ma liste de genres sasis en dur dans bdd dans ma jsp
-       List<Genre>genres = genreService.findAllGenre();
-       modelMap.addAttribute("Genres", genres);
+        List<Genre>genres = genreService.findAllGenre();
+        modelMap.addAttribute("Genres", genres);
 
 
         //envoi un objet vide à la JSP inscription
@@ -81,13 +81,11 @@ public class FilmRegisterController {
     public String addFilm(@Valid @ModelAttribute("FilmRegister") Film film, BindingResult result, ModelMap modelMap,
                           HttpSession httpSession) {
 
-
         // Vérification des erreurs
         System.out.println(result.getErrorCount());
         if (result.hasErrors()) {
             return "Main/inscription";
         }
-
 
         if(filmService.getByTitle(film.getTitre()) != null){
             String messageErreur = "Film dejà enregistré";
@@ -124,9 +122,7 @@ public class FilmRegisterController {
             String messageErreur = "Mauvais format de durée";
             modelMap.addAttribute("Erreur", messageErreur);
             return "Main/filmRegister";
-            }
-
-
+        }
 //********************* Ajout des acteurs seulement si ils n'existent pas déjà *****************************//
 
         //Créér une nouvelle liste acteursBdd
@@ -138,8 +134,8 @@ public class FilmRegisterController {
         //Si l'acteur n'existe pas
         // ajout de l'acteur dans l'objet film à la liste bdd
 
-       ArrayList<Acteur> acteursBdd = new ArrayList<Acteur>();
-       for (Acteur a : acteurs){
+        ArrayList<Acteur> acteursBdd = new ArrayList<Acteur>();
+        for (Acteur a : acteurs){
             Acteur act = acteurService.isExist(a.getPrenom(),a.getNom());
             if( act != null){
                 acteursBdd.add(act);
@@ -149,7 +145,6 @@ public class FilmRegisterController {
         }
         film.setActeurs(acteursBdd);
 
-
 //********************** Ajout du réalisateur en bdd seulement si il n'existe pas déjà *************************//
         // Chercher dans la bdd l'objet realisateur par nom prénom
         // Si n'existe pas, ajouter réalisateur
@@ -157,11 +152,11 @@ public class FilmRegisterController {
 
         Realisateur realisateur = realisateurService.isExist(film.getRealisateur().getNom(),film.getRealisateur().getPrenom());
 
-       if(realisateur == null){
-          long idRealisateur=realisateurService.add(film.getRealisateur());
-       }else {
-           film.setRealisateur(realisateur);
-       }
+        if(realisateur == null){
+            long idRealisateur=realisateurService.add(film.getRealisateur());
+        }else {
+            film.setRealisateur(realisateur);
+        }
 
 //********************* Sélection dans la liste genre ********************************************//
         //Récuperer genres saisis dans l'objet
@@ -173,26 +168,24 @@ public class FilmRegisterController {
             if(gbdd != null){
                 genresBdd.add(gbdd);
             }
-       }
-       film.setGenres(genresBdd);
+        }
+        film.setGenres(genresBdd);
 
 
-       //Récuperation de l'id de l'utilisateur courant
+        //Récuperation de l'id de l'utilisateur courant
         long idUser=(Long)httpSession.getAttribute("UserId");
         //Récupérationn de l'utilisateur courant
         User user = userService.getById(idUser, true);
 
-        System.out.println(film);
+
 
         film.setUser(user);
 
         //Ajout du film dans la bdd
         long idFilm = filmService.add(film);
 
-
         return "redirect:/consultFilm";
     }
-
 
 }
 

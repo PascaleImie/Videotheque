@@ -5,17 +5,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>VideoBox</title>
     <%@ include file="head.jsp" %>
 </head>
-
-<body style="background-color:#000;" >
+<body>
 <header>
     <%@ include file="header.jsp" %>
 </header>
 <div class="container">
     <h1> Mes infos utilisateur</h1>
 </div>
-
 <div class="container">
     <div class="form">
         <div class="row">
@@ -44,9 +43,6 @@
         </div>
     </div>
 </div>
-<footer>
-
-</footer>
 </body>
 </html>
 

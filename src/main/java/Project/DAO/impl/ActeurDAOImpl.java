@@ -19,10 +19,10 @@ public class ActeurDAOImpl implements ActeurDAO {
 
     @Override
     public long add(Acteur acteur) {
-            Serializable id = sessionFactory.getCurrentSession().save(acteur);
-            return (Long) id;
+        Serializable id = sessionFactory.getCurrentSession().save(acteur);
+        return (Long) id;
 
-        }
+    }
 
     @Override
     public Acteur getById(long id, boolean lazy) {

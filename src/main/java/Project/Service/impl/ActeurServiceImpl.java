@@ -33,5 +33,4 @@ public class ActeurServiceImpl implements ActeurService {
                 return acteurDAO.isExist(nom,prenom);
         }
 
-
 }

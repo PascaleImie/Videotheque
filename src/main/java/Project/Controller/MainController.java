@@ -20,8 +20,6 @@ import java.util.ArrayList;
 @Controller
 public class MainController {
 
-
-
     @Autowired
     private UserService userService;
 
@@ -31,11 +29,8 @@ public class MainController {
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public String main(ModelMap modelMap, HttpSession httpSession) throws UnsupportedEncodingException {
 
-       // mailer.sendMail("Test", "Test", "test.videobox@gmail.com");
-
-
+        // mailer.sendMail("Test", "Test", "test.videobox@gmail.com");
 
         return "Main/index";
     }
-
 }

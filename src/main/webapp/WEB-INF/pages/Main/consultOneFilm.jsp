@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Consultation détail film</title>
+    <title>VideoBox</title>
     <%@ include file="head.jsp" %>
 </head>
 <body style="background-color:#000;" >
@@ -32,12 +32,12 @@
 
         </div>
     </div>
-   <div class="row">
+    <div class="row">
         <div class="col-md-6 ">
             <p class="libelle">Genre(s) :
-            <c:forEach var="genre" items="${Genres}">
-            ${genre.libelle}
-            </c:forEach></p>
+                <c:forEach var="genre" items="${Genres}">
+                    ${genre.libelle}
+                </c:forEach></p>
         </div>
         <div class="col-md-6 ">
             <p class="libelleR">Nationalité : ${Film.nationalite}</p>
@@ -46,9 +46,9 @@
     <div class="row">
         <div class="col-md-6 ">
             <p class="libelle">Acteurs principaux :
-            <c:forEach var="acteur" items="${Acteurs}">
-            ${acteur.prenom} ${acteur.nom},
-            </c:forEach></p>
+                <c:forEach var="acteur" items="${Acteurs}">
+                    ${acteur.prenom} ${acteur.nom},
+                </c:forEach></p>
         </div>
         <div class="col-md-6">
             <p class="libelleR">Réalisateur : ${Realisateur.prenom} ${Realisateur.nom}</p>
@@ -58,18 +58,11 @@
         <div class="col-md-12 ">
             <p class="libelle"><br>
             <div class="libelle">
-            ${Film.synopsis}
+                ${Film.synopsis}
             </div>
             </p>
         </div>
     </div>
 </div>
-
-
-<footer>
-
-</footer>
-</body>
-</html>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <HTML>
 <head>
-    <title>Connexion</title>
+    <title>VideoBox</title>
 
     <spring:url value="/resources/css/style.css" var="mainCss"/>
     <link href="${mainCss}" rel="stylesheet"/>
@@ -20,48 +20,40 @@
 
     <spring:url value="/resources/js/style.js" var="stylejs"/>
     <script type="text/javascript" src="${stylejs}"></script>
-
 </head>
-
-<!--<body style="background-color:#000;" >-->
+<body>
 <header>
     <h1>My VideoBox</h1>
 </header>
 <div class="col-md-offset-3 col-md-6 col-md-offset-3">
     <form:form method="POST" modelAttribute="User" action="/Videotheque/connectUser">
-
-    <div class="erreur">${Erreur}</div>
-       <div class="form">
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
-                        <div class="form-group">
-                            <label for="email">Email </label>
-                            <td><form:input type="email" id="emailConnect" class="form-control" path="email"/></td>
-                            <td><form:errors path="email" cssClass="error"/></td>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
-                        <div class="form-group">
-                            <label for="mdp">Mot de passe </label>
-                            <td><form:input type="password" id="mdpConnect" class="form-control"  path="mdp"/></td>
-                            <td><form:errors path="mdp" cssClass="error"/></td>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
-                        <button type="submit" id="buttonConnect" class="btn btn-success btn-lg">S'identifier</button>
+        <div class="erreur">${Erreur}</div>
+        <div class="form">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <td><form:input type="email" id="emailConnect" class="form-control" path="email"/></td>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe </label>
+                        <td><form:input type="password" id="mdpConnect" class="form-control"  path="mdp"/></td>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+                    <button type="submit" id="buttonConnect" class="btn btn-success btn-lg">S'identifier</button>
+                </div>
+            </div>
+        </div>
     </form:form>
 </div>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </body>
 </html>
 

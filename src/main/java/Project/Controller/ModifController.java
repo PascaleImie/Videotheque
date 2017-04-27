@@ -50,7 +50,7 @@ public class ModifController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/modifPass")
     public String modifPass(@Valid @ModelAttribute("UserModif")UserConnectForm userConnectForm, BindingResult result, ModelMap modelMap,
-                              HttpSession httpSession, @RequestParam(value="mdpConf",required=true) String mdpConf,
+                            HttpSession httpSession, @RequestParam(value="mdpConf",required=true) String mdpConf,
                             @RequestParam (value="newMdp", required=true) String newMdp) {
 
 

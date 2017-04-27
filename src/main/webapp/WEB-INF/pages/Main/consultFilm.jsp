@@ -6,10 +6,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Consultation films</title>
+    <title>VideoBox</title>
     <%@ include file="head.jsp" %>
 </head>
-<body style="background-color:#000;" >
 <header>
     <%@ include file="header.jsp" %>
 </header>
@@ -35,23 +34,23 @@
                 </tr>
                 </thead>
                 <c:forEach var="Films" items="${Films}">
-                <tbody>
-                <tr>
-                    <td>${Films.id_film}</td>
-                    <td>${Films.titre}</td>
-                    <td>${Films.nationalite}</td>
-                    <td>${Films.annee}</td>
-                    <td>${Films.duree}</td>
-                    <td>
-                        <c:forEach var="Genre" items="${Films.genres}">
-                            ${Genre.libelle}
-                        </c:forEach>
-                    </td>
-                    <td>${Films.realisateur.prenom} ${Films.realisateur.nom}</td>
-                    <td><a href="consultOneFilm/${Films.id_film}"><i class="fa fa-film" aria-hidden="true" style="color:yellow"></i></a></td>
-                    <td><a href="deleteFilm/${Films.id_film}"><span class="glyphicon glyphicon-trash" style="color:red"></span></a></td>
-                </tr>
-                </tbody>
+                    <tbody>
+                    <tr>
+                        <td>${Films.id_film}</td>
+                        <td>${Films.titre}</td>
+                        <td>${Films.nationalite}</td>
+                        <td>${Films.annee}</td>
+                        <td>${Films.duree}</td>
+                        <td>
+                            <c:forEach var="Genre" items="${Films.genres}">
+                                ${Genre.libelle}
+                            </c:forEach>
+                        </td>
+                        <td>${Films.realisateur.prenom} ${Films.realisateur.nom}</td>
+                        <td><a href="consultOneFilm/${Films.id_film}"><i class="fa fa-film" aria-hidden="true" style="color:yellow"></i></a></td>
+                        <td><a href="deleteFilm/${Films.id_film}"><span class="glyphicon glyphicon-trash" style="color:red"></span></a></td>
+                    </tr>
+                    </tbody>
                 </c:forEach>
             </table>
         </div>

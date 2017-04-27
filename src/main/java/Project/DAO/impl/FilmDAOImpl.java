@@ -29,11 +29,11 @@ public class FilmDAOImpl implements FilmDAO {
     }
 
     public Film getById(long id, boolean lazy){
-       Film film =  sessionFactory.getCurrentSession().get(Film.class, id);
+        Film film =  sessionFactory.getCurrentSession().get(Film.class, id);
         Hibernate.initialize(film.getActeurs());
         Hibernate.initialize(film.getGenres());
         Hibernate.initialize(film.getRealisateur());
-       return film;
+        return film;
     }
 
 
@@ -64,7 +64,5 @@ public class FilmDAOImpl implements FilmDAO {
         return films;
 
     }
-
-
 
 }

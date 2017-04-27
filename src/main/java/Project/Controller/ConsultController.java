@@ -38,53 +38,60 @@ public class ConsultController {
     @RequestMapping(method = RequestMethod.GET, value = "consultUser")
     public String main(ModelMap modelMap, HttpSession httpSession) throws UnsupportedEncodingException {
 
-        //Récupère id enregistré dans session
-        long id =(Long)httpSession.getAttribute("UserId");
-        //Récupère user
-        User user = userService.getById(id, false);
-        //Envoie du user à JSP
-        modelMap.addAttribute("User", user);
-
-
-
         List<User> listUser = userService.getAllUser();
         modelMap.addAttribute("listUser",listUser);
 
+        try {
+            //Récupère id enregistré dans session
+            long id = (Long) httpSession.getAttribute("UserId");
+            //Récupère user
+            User user = userService.getById(id, false);
+            //Envoie l'objet user à la JSP
+            modelMap.addAttribute("User", user);
+            return "Main/consultUser";
 
 
-        return "Main/consultUser";
+        } catch (NullPointerException e) {
+            return "Main/index";
+        }
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "infoUser")
     public String info(ModelMap modelMap, HttpSession httpSession) throws UnsupportedEncodingException {
+        try {
+            //Récupère id enregistré dans session
+            long id = (Long) httpSession.getAttribute("UserId");
+            //Récupère user
+            User user = userService.getById(id, false);
+            //Envoie l'objet user à la JSP
+            modelMap.addAttribute("User", user);
+            return "Main/infoUser";
 
-        //Récupère id enregistré dans session
-        long id =(Long)httpSession.getAttribute("UserId");
-        //Récupère user
-        User user = userService.getById(id, false);
-        //Envoie du user à JSP
-        modelMap.addAttribute("User", user);
 
-
-
-        return "Main/infoUser";
+        } catch (NullPointerException e) {
+            return "Main/index";
+        }
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "consultFilm")
     public String filmConsult(ModelMap modelMap, HttpSession httpSession) throws UnsupportedEncodingException {
 
-        //Récupère id enregistré dans session
-        long id =(Long)httpSession.getAttribute("UserId");
-        //Récupère user
-        User user = userService.getById(id, false);
-        //Envoie du user à JSP
-        modelMap.addAttribute("User", user);
-
-
         List<Film> films = filmService.getAllFilm();
         modelMap.addAttribute("Films",films);
 
-        return "Main/consultFilm";
+        try {
+            //Récupère id enregistré dans session
+            long id = (Long) httpSession.getAttribute("UserId");
+            //Récupère user
+            User user = userService.getById(id, false);
+            //Envoie l'objet user à la JSP
+            modelMap.addAttribute("User", user);
+            return "Main/consultFilm";
+
+
+        } catch (NullPointerException e) {
+            return "Main/index";
+        }
     }
 
 
@@ -92,7 +99,7 @@ public class ConsultController {
     public String oneFilmConsult(@PathVariable("id_film") long id_film, ModelMap modelMap, HttpSession httpSession)
             throws UnsupportedEncodingException {
 
-       Film  film = filmService.getById(id_film,true);
+        Film  film = filmService.getById(id_film,true);
         modelMap.addAttribute("Film", film);
         modelMap.addAttribute("Realisateur",film.getRealisateur());
         modelMap.addAttribute("Acteurs",film.getActeurs());
