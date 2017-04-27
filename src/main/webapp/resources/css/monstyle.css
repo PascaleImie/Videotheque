@@ -1,3 +1,4 @@
+/* Page arrivée sur l'application*/
 body{
 	background-color:#000
 }
@@ -20,11 +21,7 @@ img {
 	justify-content: center;
 }
 
-/*Ajout pour formulaire film register*/
-div .form-group{
- margin-right: 200px;
- margin-left: 200px;
-}
+
 
 
 

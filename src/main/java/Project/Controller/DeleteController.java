@@ -50,7 +50,7 @@ public class DeleteController {
 
         Film film=filmService.getById(id_film,true);
         filmService.delete(film);
-        return "redirect:/supprFilm";
+        return "redirect:/consultFilm";
     }
 
 }

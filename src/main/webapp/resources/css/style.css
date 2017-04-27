@@ -137,11 +137,14 @@ div .libelle{
 
 }
 
-
 div .libelleR {
     text-align: right;
     color: white;
     font-size: 15px;
     padding-top: 20px;
-
+}
+/*Ajout pour formulaire film register*/
+div .form-group{
+ margin-right: 200px;
+ margin-left: 200px;
 }

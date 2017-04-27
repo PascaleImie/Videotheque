@@ -40,8 +40,13 @@ public class FilmDAOImpl implements FilmDAO {
     public void delete(Film film){
         Session session = sessionFactory.getCurrentSession();
         film.getActeurs().remove(film.getActeurs());
+        film.getGenres().clear();
         film.getGenres().remove(film.getGenres());
+
+
         session.remove(film);
+
+
     }
 
     @Override
