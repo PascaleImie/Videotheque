@@ -21,6 +21,12 @@ img {
 	justify-content: center;
 }
 
+/*Ajout pour formulaire film register*/
+div .form-group{
+ margin-right: 200px;
+ margin-left: 200px;
+}
+
 
 
 

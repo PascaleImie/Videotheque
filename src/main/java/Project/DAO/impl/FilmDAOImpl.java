@@ -43,7 +43,6 @@ public class FilmDAOImpl implements FilmDAO {
         film.getGenres().clear();
         film.getGenres().remove(film.getGenres());
 
-
         session.remove(film);
 
 

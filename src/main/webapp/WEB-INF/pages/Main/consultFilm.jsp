@@ -9,6 +9,7 @@
     <title>VideoBox</title>
     <%@ include file="head.jsp" %>
 </head>
+<body>
 <header>
     <%@ include file="header.jsp" %>
 </header>
@@ -49,13 +50,13 @@
                         <td>${Films.realisateur.prenom} ${Films.realisateur.nom}</td>
                         <td><a href="consultOneFilm/${Films.id_film}"><i class="fa fa-film" aria-hidden="true" style="color:yellow"></i></a></td>
                         <td><a href="deleteFilm/${Films.id_film}"><span class="glyphicon glyphicon-trash" style="color:red"></span></a></td>
+
                     </tr>
                     </tbody>
                 </c:forEach>
             </table>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
