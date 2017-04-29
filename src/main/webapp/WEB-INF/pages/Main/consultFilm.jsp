@@ -8,12 +8,16 @@
     <meta charset="UTF-8">
     <title>VideoBox</title>
     <%@ include file="head.jsp" %>
+
 </head>
 <body>
 <header>
     <%@ include file="header.jsp" %>
 </header>
+<div id="dialogue" title="Confirmation de la suppression" style="display:none;">
+    <p> Confirmez-vous la suppression du film ?</p>
 
+</div>
 <h1 style="color:white">Liste Films</h1>
 <div class="container">
     <div class="row">
@@ -23,7 +27,6 @@
             <table class="table" id="bootstrap-table">
                 <thead>
                 <tr>
-                    <th>#</th>
                     <th>Titre</th>
                     <th>Nationalité</th>
                     <th>Année de sortie</th>
@@ -32,12 +35,13 @@
                     <th>Réalisateur</th>
                     <th>Fiche film</th>
                     <th><span class="glyphicon glyphicon-trash" style="color:red"></span></th>
+
+
                 </tr>
                 </thead>
                 <c:forEach var="Films" items="${Films}">
                     <tbody>
                     <tr>
-                        <td>${Films.id_film}</td>
                         <td>${Films.titre}</td>
                         <td>${Films.nationalite}</td>
                         <td>${Films.annee}</td>
@@ -54,9 +58,35 @@
                     </tr>
                     </tbody>
                 </c:forEach>
+
             </table>
         </div>
     </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+        	var targetUrl = $(".confirmLink").attr("href");
+        	$(".corbeille").click(function(){
+
+              $( "#dialogue" ).dialog({
+            	height:180,
+		        width:400,
+
+                buttons: {
+                    "OK": function() {
+
+                       document.location.href = targetUrl;
+                    },
+                    "Annuler": function() {
+                        $( this ).dialog( "close" );
+                    }
+                }
+            });
+
+        });
+});
+</script>
+
 </body>
 </html>
